@@ -1,9 +1,11 @@
+// Import Angular core and child components needed by this root component
 import { Component } from '@angular/core';
 import { HeaderComponent } from './header/header.component';
 import { UserInputComponent } from "./user-input/user-input.component";
 import type { InvestmentInput } from './investment-input.model';
 import { InvestmentResultsComponent } from "./investment-results/investment-results.component";
 
+// Component Definition
 @Component({
   selector: 'app-root',
   standalone: true,
@@ -11,6 +13,7 @@ import { InvestmentResultsComponent } from "./investment-results/investment-resu
   templateUrl: './app.component.html',
 })
 
+// Will hold an array of annual investment calculations for the view
 export class AppComponent {
   resultsData ?: {
     year: number;
@@ -21,6 +24,7 @@ export class AppComponent {
       totalAmountInvested: number;
   }[];
 
+  // Calculates and populates the yearly breakdown when form data is submitted
   onCalculateInvestmentResults(data: InvestmentInput) {
   
     const { initialInvestment, duration, expectedReturn, annualInvestment } = data;

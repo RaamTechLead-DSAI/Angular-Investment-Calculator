@@ -1,5 +1,8 @@
+<!-- Form element that triggers the onSubmit() method in the component when submitted -->
 <form (ngSubmit)="onSubmit()">
+    <!-- Grouping container for all input fields -->
     <div class="input-group">
+        <!-- Input field for Initial Investment -->
         <p>
             <label for="initial-investment">Initial Investment</label>
             <input
@@ -9,6 +12,7 @@
                 [(ngModel)]="enteredInitialInvestment"
             />
         </p>
+        <!-- Input field for Annual Investment -->
         <p>
             <label for="annual-investment">Annual Investment</label>
             <input
@@ -18,6 +22,7 @@
                 [(ngModel)]="enteredAnnualInvestment"
             />
         </p>
+        <!-- Input field for Expected Return -->
         <p>
             <label for="expected-return">Expected Return</label>
             <input
@@ -27,6 +32,7 @@
                 [(ngModel)]="enteredExpectedReturn"
             />
         </p>
+         <!-- Input field for Investment Duration -->
         <p>
             <label for="duration">Duration</label>
             <input
@@ -37,6 +43,7 @@
             />
         </p>
     </div>
+     <!-- Submit button for the form -->
         <p>
             <button>Calculate</button>
         </p>

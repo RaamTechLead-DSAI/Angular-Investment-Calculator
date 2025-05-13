@@ -1,3 +1,4 @@
+// Basic Angular component for displaying the application's header section.
 import { Component } from '@angular/core';
 
 @Component({
@@ -8,5 +9,5 @@ import { Component } from '@angular/core';
   styleUrl: './header.component.css'
 })
 export class HeaderComponent {
-
+  // Currently, this component does not contain any logic or data.
 }

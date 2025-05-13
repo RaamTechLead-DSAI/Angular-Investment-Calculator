@@ -1,6 +1,8 @@
+<!-- Conditional rendering: If no results are available, show a prompt message -->
 @if (!results) {
     <p class="center">Please enter some values and press "Calculate"</p>
 } @else {
+     <!-- Table displaying investment results when data is available -->
     <table>
         <thead>
             <tr>
@@ -11,14 +13,15 @@
                 <th>Invested Capital</th>
             </tr>
         </thead>
+        <!-- Table body dynamically created from the results array -->
         <tbody>
             @for (result of results; track result.year) {
                 <tr>
                     <td>{{ result.year }}</td>
-                    <td>{{ result.valueEndOfYear }}</td>
-                    <td>{{ result.interest }}</td>
-                    <td>{{ result.totalInterest }}</td>
-                    <td>{{ result.totalAmountInvested }}</td>
+                    <td>{{ result.valueEndOfYear | currency }}</td>
+                    <td>{{ result.interest  | currency }}</td>
+                    <td>{{ result.totalInterest  | currency }}</td>
+                    <td>{{ result.totalAmountInvested  | currency }}</td>
                 </tr>
             }
         </tbody>
